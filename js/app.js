@@ -73,88 +73,59 @@ function displayCards() {
     $('.pcard1').css('background-color', 'white');
     $('.pcard2').css('background-color', 'white');
     $('.dcard1').css('background-color', 'white');
-    if (DCards[0].Suit == "♥") {
-        document.getElementById("dc1").innerHTML = DCards[0].Value + "<br>" + "♥";
-    } else if (DCards[0].Suit == "♦") {
-        document.getElementById("dc1").innerHTML = DCards[0].Value + "<br>" + "♦";
-    } else if (DCards[0].Suit == "♠") {
-        document.getElementById("dc1").innerHTML = DCards[0].Value + "<br>" + "♠";
-    } else if (DCards[0].Suit == "♣") {
-        document.getElementById("dc1").innerHTML = DCards[0].Value + "<br>" + "♣";
-    }
-
-    for (let i = 0; i <= PCards.length; i++) {
+    document.getElementById("dc1").innerHTML = DCards[0].Value + "<br>" + DCards[0].Suit;
+    for (let i = 0; i < PCards.length; i++) {
         let a = i;
         $('#pc' + a).html(PCards[i].Value + "<br>" + PCards[i].Suit);
     }
-
-    // for (const key in PCards) {
-    //     console.log(PCards[key]);
-    //     document.getElementById(`pc${PCards[key]}`).innerHTML = PCards[0].Value + "<br>" + "♥";
-    // }
-
-    // if (PCards[0].Suit == "♥") {
-    //     document.getElementById("pc1").innerHTML = PCards[0].Value + "<br>" + "♥";
-    // } else if (PCards[0].Suit == "diamonds") {
-    //     document.getElementById("pc1").innerHTML = PCards[0].Value + "<br>" + "♦";
-    // } else if (PCards[0].Suit == "spades") {
-    //     document.getElementById("pc1").innerHTML = PCards[0].Value + "<br>" + "♠";
-    // } else if (PCards[0].Suit == "clubs") {
-    //     document.getElementById("pc1").innerHTML = PCards[0].Value + "<br>" + "♣";
-    // }
-
-    // if (PCards[1].Suit == "♥") {
-    //     document.getElementById("pc2").innerHTML = PCards[1].Value + "<br>" + "♥";
-    // } else if (PCards[1].Suit == "diamonds") {
-    //     document.getElementById("pc2").innerHTML = PCards[1].Value + "<br>" + "♦";
-    // } else if (PCards[1].Suit == "spades") {
-    //     document.getElementById("pc2").innerHTML = PCards[1].Value + "<br>" + "♠";
-    // } else if (PCards[1].Suit == "clubs") {
-    //     document.getElementById("pc2").innerHTML = PCards[1].Value + "<br>" + "♣";
-    // }
 }
 //if the players clicks hit or stick
 function hitOrStick() {
     if (event.target.id === "hit") {
         var newcard = Math.floor(Math.random() * deck.length);
         NPCards.push(deck[newcard]);
+
+
         if (NPCards.length === 1) {
             $(".pcard3").css("background-color", "white").css("border", "1px solid black").css("border-radius", "15px");
-            if (NPCards[0].Suit === "♥") {
-                document.getElementById("pc3").innerHTML = NPCards[0].Value + "<br>" + "♥";
-            } else if (NPCards[0].Suit === "diamonds") {
-                document.getElementById("pc3").innerHTML = NPCards[0].Value + "<br>" + "♦";
-            } else if (NPCards[0].Suit === "spades") {
-                document.getElementById("pc3").innerHTML = NPCards[0].Value + "<br>" + "♠";
-            } else if (NPCards[0].Suit === "clubs") {
-                document.getElementById("pc3").innerHTML = NPCards[0].Value + "<br>" + "♣";
-            }
+            document.getElementById("pc2").innerHTML = NPCards[0].Value + "<br>" + NPCards[0].Suit;
+            // if (NPCards[0].Suit === "♥") {
+            //     document.getElementById("pc3").innerHTML = NPCards[0].Value + "<br>" + "♥";
+            // } else if (NPCards[0].Suit === "diamonds") {
+            //     document.getElementById("pc3").innerHTML = NPCards[0].Value + "<br>" + "♦";
+            // } else if (NPCards[0].Suit === "spades") {
+            //     document.getElementById("pc3").innerHTML = NPCards[0].Value + "<br>" + "♠";
+            // } else if (NPCards[0].Suit === "clubs") {
+            //     document.getElementById("pc3").innerHTML = NPCards[0].Value + "<br>" + "♣";
+            // }
             calculateCards();
         }
         if (NPCards.length === 2) {
             $(".pcard4").css("background-color", "white").css("border", "1px solid black").css("border-radius", "15px");
-            if (NPCards[1].Suit === "♥") {
-                document.getElementById("pc4").innerHTML = NPCards[1].Value + "<br>" + "♥";
-            } else if (NPCards[1].Suit === "diamonds") {
-                document.getElementById("pc4").innerHTML = NPCards[1].Value + "<br>" + "♦";
-            } else if (NPCards[1].Suit === "spades") {
-                document.getElementById("pc4").innerHTML = NPCards[1].Value + "<br>" + "♠";
-            } else if (NPCards[1].Suit === "clubs") {
-                document.getElementById("pc4").innerHTML = NPCards[1].Value + "<br>" + "♣";
-            }
+            document.getElementById("pc3").innerHTML = NPCards[1].Value + "<br>" + NPCards[1].Suit;
+            // if (NPCards[1].Suit === "♥") {
+            //     document.getElementById("pc4").innerHTML = NPCards[1].Value + "<br>" + "♥";
+            // } else if (NPCards[1].Suit === "diamonds") {
+            //     document.getElementById("pc4").innerHTML = NPCards[1].Value + "<br>" + "♦";
+            // } else if (NPCards[1].Suit === "spades") {
+            //     document.getElementById("pc4").innerHTML = NPCards[1].Value + "<br>" + "♠";
+            // } else if (NPCards[1].Suit === "clubs") {
+            //     document.getElementById("pc4").innerHTML = NPCards[1].Value + "<br>" + "♣";
+            // }
             calculateCards();
         }
         if (NPCards.length === 3) {
             $(".pcard5").css("background-color", "white").css("border", "1px solid black").css("border-radius", "15px");
-            if (NPCards[2].Suit === "♥") {
-                document.getElementById("pc5").innerHTML = NPCards[2].Value + "<br>" + "♥";
-            } else if (NPCards[2].Suit === "diamonds") {
-                document.getElementById("pc5").innerHTML = NPCards[2].Value + "<br>" + "♦";
-            } else if (NPCards[2].Suit === "spades") {
-                document.getElementById("pc5").innerHTML = NPCards[2].Value + "<br>" + "♠";
-            } else if (NPCards[2].Suit === "clubs") {
-                document.getElementById("pc5").innerHTML = NPCards[2].Value + "<br>" + "♣";
-            }
+            document.getElementById("pc4").innerHTML = NPCards[2].Value + "<br>" + NPCards[2].Suit;
+            // if (NPCards[2].Suit === "♥") {
+            //     document.getElementById("pc5").innerHTML = NPCards[2].Value + "<br>" + "♥";
+            // } else if (NPCards[2].Suit === "diamonds") {
+            //     document.getElementById("pc5").innerHTML = NPCards[2].Value + "<br>" + "♦";
+            // } else if (NPCards[2].Suit === "spades") {
+            //     document.getElementById("pc5").innerHTML = NPCards[2].Value + "<br>" + "♠";
+            // } else if (NPCards[2].Suit === "clubs") {
+            //     document.getElementById("pc5").innerHTML = NPCards[2].Value + "<br>" + "♣";
+            // }
             calculateCards();
         }
     } else if (playerOption === "stick") {
