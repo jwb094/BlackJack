@@ -1,6 +1,6 @@
 var deck = [];
 var card = {};
-var suits = ["hearts", "diamonds", "clubs", "spades"];
+var suits = ["♥", "♦", "♣", "♠"];
 var values = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "K", "Q", "J"];
 let deck_random;
 let playdeck = [];
@@ -63,59 +63,64 @@ function shuffledeck() {
 
 //assign 2 cards for the player and dealer
 function drawdeck() {
-    //console.log(playdeck);
     PCards.push(playdeck[0], playdeck[2]);
     DCards.push(playdeck[1], playdeck[3]);
     PPCards = PCards;
-    console.log(PPCards);
-    //console.log("Dealers cards" + DCards);
-
+    console.log(PCards);
 }
 //displaythe cards for dealer and player
 function displayCards() {
     $('.pcard1').css('background-color', 'white');
     $('.pcard2').css('background-color', 'white');
     $('.dcard1').css('background-color', 'white');
-    if (DCards[0].Suit == "hearts") {
+    if (DCards[0].Suit == "♥") {
         document.getElementById("dc1").innerHTML = DCards[0].Value + "<br>" + "♥";
-    } else if (DCards[0].Suit == "diamonds") {
+    } else if (DCards[0].Suit == "♦") {
         document.getElementById("dc1").innerHTML = DCards[0].Value + "<br>" + "♦";
-    } else if (DCards[0].Suit == "spades") {
+    } else if (DCards[0].Suit == "♠") {
         document.getElementById("dc1").innerHTML = DCards[0].Value + "<br>" + "♠";
-    } else if (DCards[0].Suit == "clubs") {
+    } else if (DCards[0].Suit == "♣") {
         document.getElementById("dc1").innerHTML = DCards[0].Value + "<br>" + "♣";
     }
 
-
-
-    if (PCards[0].Suit == "hearts") {
-        document.getElementById("pc1").innerHTML = PCards[0].Value + "<br>" + "♥";
-    } else if (PCards[0].Suit == "diamonds") {
-        document.getElementById("pc1").innerHTML = PCards[0].Value + "<br>" + "♦";
-    } else if (PCards[0].Suit == "spades") {
-        document.getElementById("pc1").innerHTML = PCards[0].Value + "<br>" + "♠";
-    } else if (PCards[0].Suit == "clubs") {
-        document.getElementById("pc1").innerHTML = PCards[0].Value + "<br>" + "♣";
+    for (let i = 0; i <= PCards.length; i++) {
+        let a = i;
+        $('#pc' + a).html(PCards[i].Value + "<br>" + PCards[i].Suit);
     }
 
-    if (PCards[1].Suit == "hearts") {
-        document.getElementById("pc2").innerHTML = PCards[1].Value + "<br>" + "♥";
-    } else if (PCards[1].Suit == "diamonds") {
-        document.getElementById("pc2").innerHTML = PCards[1].Value + "<br>" + "♦";
-    } else if (PCards[1].Suit == "spades") {
-        document.getElementById("pc2").innerHTML = PCards[1].Value + "<br>" + "♠";
-    } else if (PCards[1].Suit == "clubs") {
-        document.getElementById("pc2").innerHTML = PCards[1].Value + "<br>" + "♣";
-    }
+    // for (const key in PCards) {
+    //     console.log(PCards[key]);
+    //     document.getElementById(`pc${PCards[key]}`).innerHTML = PCards[0].Value + "<br>" + "♥";
+    // }
+
+    // if (PCards[0].Suit == "♥") {
+    //     document.getElementById("pc1").innerHTML = PCards[0].Value + "<br>" + "♥";
+    // } else if (PCards[0].Suit == "diamonds") {
+    //     document.getElementById("pc1").innerHTML = PCards[0].Value + "<br>" + "♦";
+    // } else if (PCards[0].Suit == "spades") {
+    //     document.getElementById("pc1").innerHTML = PCards[0].Value + "<br>" + "♠";
+    // } else if (PCards[0].Suit == "clubs") {
+    //     document.getElementById("pc1").innerHTML = PCards[0].Value + "<br>" + "♣";
+    // }
+
+    // if (PCards[1].Suit == "♥") {
+    //     document.getElementById("pc2").innerHTML = PCards[1].Value + "<br>" + "♥";
+    // } else if (PCards[1].Suit == "diamonds") {
+    //     document.getElementById("pc2").innerHTML = PCards[1].Value + "<br>" + "♦";
+    // } else if (PCards[1].Suit == "spades") {
+    //     document.getElementById("pc2").innerHTML = PCards[1].Value + "<br>" + "♠";
+    // } else if (PCards[1].Suit == "clubs") {
+    //     document.getElementById("pc2").innerHTML = PCards[1].Value + "<br>" + "♣";
+    // }
 }
-
+//if the players clicks hit or stick
 function hitOrStick() {
     if (event.target.id === "hit") {
         var newcard = Math.floor(Math.random() * deck.length);
         NPCards.push(deck[newcard]);
         if (NPCards.length === 1) {
             $(".pcard3").css("background-color", "white").css("border", "1px solid black").css("border-radius", "15px");
-            if (NPCards[0].Suit === "hearts") {
+            if (NPCards[0].Suit === "♥") {
                 document.getElementById("pc3").innerHTML = NPCards[0].Value + "<br>" + "♥";
             } else if (NPCards[0].Suit === "diamonds") {
                 document.getElementById("pc3").innerHTML = NPCards[0].Value + "<br>" + "♦";
@@ -128,7 +133,7 @@ function hitOrStick() {
         }
         if (NPCards.length === 2) {
             $(".pcard4").css("background-color", "white").css("border", "1px solid black").css("border-radius", "15px");
-            if (NPCards[1].Suit === "hearts") {
+            if (NPCards[1].Suit === "♥") {
                 document.getElementById("pc4").innerHTML = NPCards[1].Value + "<br>" + "♥";
             } else if (NPCards[1].Suit === "diamonds") {
                 document.getElementById("pc4").innerHTML = NPCards[1].Value + "<br>" + "♦";
@@ -141,7 +146,7 @@ function hitOrStick() {
         }
         if (NPCards.length === 3) {
             $(".pcard5").css("background-color", "white").css("border", "1px solid black").css("border-radius", "15px");
-            if (NPCards[2].Suit === "hearts") {
+            if (NPCards[2].Suit === "♥") {
                 document.getElementById("pc5").innerHTML = NPCards[2].Value + "<br>" + "♥";
             } else if (NPCards[2].Suit === "diamonds") {
                 document.getElementById("pc5").innerHTML = NPCards[2].Value + "<br>" + "♦";
@@ -158,9 +163,8 @@ function hitOrStick() {
         dealerdraw();
     }
 }
-
+//dealers function
 function dealerdraw() {
-    //   console.log("dealer says hi");
     $('.dcard2').css('background-color', 'white');
     if (DCards[1].Suit === "hearts") {
         document.getElementById("dc2").innerHTML = DCards[1].Value + "<br>" + "♥";
@@ -171,7 +175,15 @@ function dealerdraw() {
     } else if (DCards[1].Suit === "clubs") {
         document.getElementById("dc2").innerHTML = DCards[1].Value + "<br>" + "♣";
     }
-    calculateDealersCards();
+    var dealerdecision = Math.floor((Math.random() * 10) + 1);
+    if (dealerdecision % 2 == 0) {
+        var newcard = Math.floor(Math.random() * deck.length);
+        DCards.push(deck[newcard]);
+        console.log(DCards);
+        calculateDealersCards();
+    } else {
+        calculateDealersCards();
+    }
 }
 
 function firstHalf() {
@@ -180,7 +192,6 @@ function firstHalf() {
     shuffledeck();
     drawdeck();
     displayCards();
-
 }
 
 function calculateCards() {
@@ -215,93 +226,34 @@ function calculateCards() {
     }
 }
 
+function calculateDealersCards() {
+    let total = 0;
+    let cardvalue = 0;
+    if (NPCards.length === 0) {
+        null
+    } else {
+        PPCards = PCards.concat(NPCards);
+        console.log(PPCards);
+    }
 
-
-// if (PCards[0].Value == "K") {
-//     playervalue = 10 + parseInt(PCards[1].Value);
-//     console.log(playervalue);
-// } else if (PCards[0].Value == "Q") {
-//     playervalue = 10 + parseInt(PCards[1].Value);
-//     console.log(playervalue);
-// } else if (PCards[0].Value == "J") {
-//     playervalue = 10 + parseInt(PCards[1].Value);
-//     console.log(playervalue);
-// } else if (PCards[0].Value == "A") {
-//     playervalue = 1 + parseInt(PCards[1].Value);
-//     console.log(playervalue);
-// }
-
-// if (PCards[1].Value == "K") {
-//     playervalue = 10 + parseInt(PCards[0].Value);
-//     console.log(playervalue);
-// } else if (PCards[1].Value == "Q") {
-//     playervalue = 10 + parseInt(PCards[0].Value);
-//     console.log(playervalue);
-// } else if (PCards[1].Value == "J") {
-//     playervalue = 10 + parseInt(PCards[0].Value);
-//     console.log(playervalue);
-// } else if (PCards[1].Value == "A") {
-//     playervalue = 1 + parseInt(PCards[0].Value);
-//     console.log(playervalue);
-// }
-
-// //dealers card calculated if they have "K","A","Q","J"
-// if (DCards[0].Value == "K") {
-//     playervalue = 10 + parseInt(DCards[1].Value);
-//     console.log(playervalue);
-// } else if (DCards[0].Value == "Q") {
-//     playervalue = 10 + parseInt(DCards[1].Value);
-//     console.log(playervalue);
-// } else if (DCards[0].Value == "J") {
-//     playervalue = 10 + parseInt(DCards[1].Value);
-//     console.log(playervalue);
-// } else if (DCards[0].Value == "A") {
-//     playervalue = 10 + parseInt(DCards[1].Value);
-//     console.log(playervalue);
-// }
-
-// if (DCards[1].Value == "K") {
-//     playervalue = 10 + parseInt(DCards[0].Value);
-//     console.log(playervalue);
-// } else if (DCards[1].Value == "Q") {
-//     playervalue = 10 + parseInt(DCards[0].Value);
-//     console.log(playervalue);
-// } else if (DCards[1].Value == "J") {
-//     playervalue = 10 + parseInt(DCards[0].Value);
-//     console.log(playervalue);
-// } else if (DCards[1].Value == "A") {
-//     playervalue = 10 + parseInt(DCards[0].Value);
-//     console.log(playervalue);
-// }
-
-//}
-
-
-function doesTheHouseWin() {
-    //if 
-    if (playervalue > 21) {
-        //Output You Lose
-    } else if (playervalue < 21) {
-        if (condition) {
-
+    //giving values to cards that values are either integer:2 => 10 or K,J,Q,A
+    for (const key in PPCards) {
+        if (typeof PPCards[key].Value != "string") {
+            total += PPCards[key].Value;
+        } else if (PPCards[key].Value === 'K' || PPCards[key].Value === 'Q' || PPCards[key].Value === 'J') {
+            cardvalue += 10;
+        } else if (PPCards[key].Value === 'A') {
+            cardvalue += 1;
         }
     }
+
+    PDA = total + cardvalue;
+    console.log(total + " " + cardvalue + " " + PDA);
+
+
+    if (PDA > 21) {
+        $('.playerchoice').click(false);
+        $('#message').html('You Lose');
+        //Output You Lose
+    }
 }
-
-// function doesTheHouseWin() {
-
-//     if (PCards[0].Value == "K") {
-//         playervalue = 10 + parseInt(PCards[1].Value);
-//     } else if (PCards[0].Value == "Q") {
-//         playervalue = 10 + parseInt(PCards[1].Value);
-//     } else if (PCards[0].Value == "J") {
-//         playervalue = 10 + parseInt(PCards[1].Value);
-//     } else if (PCards[0].Value == "A") {
-//         playervalue = 10 + parseInt(PCards[1].Value);
-//     }
-
-
-//     dealervalue = parseInt(DCards[0].Value) + parseInt(DCards[1].Value);
-//     playervalue = parseInt(PCards[0].Value) + parseInt(PCards[1].Value);
-//     console.log(playervalue);
-// };

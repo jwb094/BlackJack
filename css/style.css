@@ -177,10 +177,10 @@
     
     .dcard1 #dc1,
     .dcard2 #dc2,
-    .pcard1 #pc1,
-    .pcard2 #pc2,
-    .pcard3 #pc3,
-    .pcard4 #pc4,
-    .pcard5 #pc5 {
+    .pcard1 #pc0,
+    .pcard2 #pc1,
+    .pcard3 #pc2,
+    .pcard4 #pc3,
+    .pcard5 #pc4 {
         font-size: 40px;
     }
