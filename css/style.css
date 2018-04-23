@@ -22,7 +22,7 @@
     /* dealers cards     */
     
     #dcard0 {
-        left: 170px;
+        left: 150px;
         top: 10px;
         /* border: 1px solid black; */
         height: 200px;
@@ -33,7 +33,7 @@
     }
     
     #dcard1 {
-        left: 320px;
+        left: 305px;
         top: 10px;
         /* border: 1px solid black; */
         height: 200px;
@@ -44,7 +44,7 @@
     }
     
     #dcard2 {
-        left: 465px;
+        left: 460px;
         top: 10px;
         /* border: 1px solid black; */
         height: 200px;
@@ -55,7 +55,7 @@
     }
     
     #dcard3 {
-        left: 605px;
+        left: 600px;
         top: 10px;
         /* border: 1px solid black; */
         height: 200px;
@@ -65,7 +65,7 @@
     }
     
     #dcard4 {
-        left: 750px;
+        left: 745px;
         top: 10px;
         height: 200px;
         width: 150px;
@@ -124,11 +124,11 @@
     /* players cards     */
     
     #pcard0 {
-        left: 170px;
+        left: 150px;
         top: 384px;
         /* border: 1px solid black; */
         height: 200px;
-        width: 150px;
+        width: 145px;
         position: absolute;
         border-radius: 15px;
         color: black;
@@ -136,11 +136,11 @@
     }
     
     #pcard1 {
-        left: 325px;
+        left: 300px;
         top: 384px;
         /* border: 1px solid black; */
         height: 200px;
-        width: 150px;
+        width: 145px;
         position: absolute;
         border-radius: 15px;
         color: black;
@@ -148,19 +148,19 @@
     }
     
     #pcard2 {
-        left: 465px;
+        left: 449px;
         top: 384px;
         height: 200px;
-        width: 150px;
+        width: 145px;
         position: absolute;
         color: black;
     }
     
     #pcard3 {
-        left: 605px;
+        left: 600px;
         top: 384px;
         height: 200px;
-        width: 150px;
+        width: 145px;
         position: absolute;
         color: black;
     }
@@ -169,7 +169,7 @@
         left: 750px;
         top: 384px;
         height: 200px;
-        width: 150px;
+        width: 145px;
         position: absolute;
         color: black;
     }
