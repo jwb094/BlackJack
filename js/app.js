@@ -211,7 +211,7 @@
             $('.playerchoice').click(false);
             $('#message').html('The House Wins');
             dealerdraw();
-            pwins = false;
+            pwin = false;
         }
     }
 
@@ -231,25 +231,24 @@
         if (PDA > 21) {
             console.log(PDA);
             $('.playerchoice').click(false);
-            pwins = false;
-            console.log(pwins);
+            pwin = false;
             $('#message').html('You Lose');
         }
         if (DDA > PDA && DDA >= 21) {
             console.log(DDA + ">" + PDA);
             $('#message').html('You Win');
-            pwins = true;
+            pwin = true;
             console.log(pwins);
         }
         if (DDA === PDA) {
             console.log(PDA + DDA);
             $('#message').html('The House wins');
-            pwins = false;
+            pwin = false;
         }
         if (PDA > DDA && PDA <= 21) {
             console.log(PDA + ">" + DDA);
             $('#message').html('You Win');
-            pwins = true;
+            pwin = true;
             console.log(pwins);
         }
     }
