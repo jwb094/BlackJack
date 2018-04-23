@@ -9,6 +9,7 @@
         background: rgb(30, 139, 30);
         text-align: center;
         display: table;
+        font-family: 'Open Sans', sans-serif;
     }
     
     h1 {
@@ -20,37 +21,56 @@
     }
     /* dealers cards     */
     
-    .dcard1 {
+    #dcard0 {
         left: 170px;
         top: 10px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         height: 200px;
-        width: 130px;
+        width: 150px;
         position: absolute;
         border-radius: 15px;
-        background-color: brown;
+        /* background-color: brown; */
     }
     
-    .dcard2 {
+    #dcard1 {
         left: 320px;
         top: 10px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         height: 200px;
-        width: 130px;
+        width: 150px;
         position: absolute;
         border-radius: 15px;
-        background-color: brown;
+        /* background-color: brown; */
     }
     
-    .dcard3 {
+    #dcard2 {
         left: 465px;
         top: 10px;
         /* border: 1px solid black; */
         height: 200px;
-        width: 130px;
+        width: 150px;
         position: absolute;
         border-radius: 15px;
         /* background-color: brown; */
+    }
+    
+    #dcard3 {
+        left: 605px;
+        top: 10px;
+        /* border: 1px solid black; */
+        height: 200px;
+        width: 150px;
+        position: absolute;
+        border-radius: 15px;
+    }
+    
+    #dcard4 {
+        left: 750px;
+        top: 10px;
+        height: 200px;
+        width: 150px;
+        position: absolute;
+        border-radius: 15px;
     }
     
     .deck {
@@ -92,9 +112,9 @@
     
     .playerchoices {
         left: 895px;
-        top: 484px;
+        top: 414px;
         border: 1px solid black;
-        height: 100px;
+        height: 160px;
         width: 190px;
         position: absolute;
         border-radius: 15px;
@@ -103,68 +123,60 @@
     }
     /* players cards     */
     
-    .pcard1 {
+    #pcard0 {
         left: 170px;
         top: 384px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         height: 200px;
-        width: 130px;
+        width: 150px;
         position: absolute;
         border-radius: 15px;
         color: black;
-        background-color: brown;
+        /* background-color: brown; */
     }
     
-    .pcard2 {
-        left: 320px;
+    #pcard1 {
+        left: 325px;
         top: 384px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         height: 200px;
-        width: 130px;
+        width: 150px;
         position: absolute;
         border-radius: 15px;
         color: black;
-        background-color: brown;
+        /* background-color: brown; */
     }
     
-    .pcard3 {
+    #pcard2 {
         left: 465px;
         top: 384px;
-        /* border: 1px solid black; */
         height: 200px;
-        width: 130px;
+        width: 150px;
         position: absolute;
-        /* border-radius: 15px; */
         color: black;
-        /* background-color: grey; */
     }
     
-    .pcard4 {
+    #pcard3 {
         left: 605px;
         top: 384px;
-        /* border: 1px solid black; */
         height: 200px;
-        width: 130px;
+        width: 150px;
         position: absolute;
-        /* border-radius: 15px; */
         color: black;
-        /* background-color: grey; */
     }
     
-    .pcard5 {
+    #pcard4 {
         left: 750px;
         top: 384px;
-        /* border: 1px solid black; */
         height: 200px;
-        width: 130px;
+        width: 150px;
         position: absolute;
-        /* border-radius: 15px; */
         color: black;
-        /* background-color: grey; */
     }
     
     .playerchoices .hit,
-    .playerchoices .stick {
+    .playerchoices .stick,
+    .playerchoices .new-game {
         border: 1px solid gold;
         border-radius: 15px;
         width: 75px;
@@ -175,8 +187,16 @@
         background-color: green;
     }
     
+    .playerchoices .new-game {
+        width: 180px;
+        height: 25px;
+    }
+    
     .dcard1 #dc1,
     .dcard2 #dc2,
+    .dcard3 #dc3,
+    .dcard4 #dc4,
+    .dcard5 #dc5,
     .pcard1 #pc0,
     .pcard2 #pc1,
     .pcard3 #pc2,
