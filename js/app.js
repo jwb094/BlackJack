@@ -11,7 +11,6 @@
     let PDA = 0;
     let DDA = 0;
     let playerOption;
-    let playervalue, dealervalue;
     let balance = 100;
     let betmade;
     let pwin = false;
@@ -74,11 +73,16 @@
             let a = i;
             let card = PCards[i].Value + PCards[i].Suit;
             $('#pcard' + a).css("background", "url(imgs/" + card + ".svg)");
+            $('#pcard' + a).fadeIn(3000);
             document.getElementById('pcard' + a).style.backgroundSize = "150px 200px";
         }
         let dcard = DCards[0].Value + DCards[0].Suit;
         $('#dcard0').css("background", "url(imgs/" + dcard + ".svg)");
+        $('#dcard0').fadeIn(3000);
         document.getElementById('dcard0').style.backgroundSize = "150px 200px";
+        $('#dcard1').css("background", "url(imgs/cardback.jpg)");
+        document.getElementById('dcard1').style.backgroundSize = "150px 200px";
+
     }
     //if the players clicks hit or stick
     function hitOrStick() {
@@ -134,7 +138,7 @@
             NPCards = [];
             balance = balance;
 
-            if (pwin = true) {
+            if (pwin === true) {
                 let winnings = betmade * 2;
                 balance = balance + winnings;
                 document.getElementById("balance").innerHTML = "balance :£" + balance;
@@ -151,22 +155,23 @@
         $('#dcard1').css("background", "url(imgs/" + dcard + ".svg)");
         document.getElementById('dcard1').style.backgroundSize = "150px 200px";
         calculateDealersCards();
-        if (DDA < 17) {
+        console.log(DDA);
+        if (DDA <= 17) {
             var newcard = Math.floor(Math.random() * deck.length);
             DCards.push(deck[newcard]);
-            if (DCards.length == 3) {
+            if (DCards.length === 3) {
                 let dcard = DCards[2].Value + DCards[2].Suit;
                 $('#dcard2').css("background", "url(imgs/" + dcard + ".svg)");
                 document.getElementById('dcard2').style.backgroundSize = "150px 200px";
                 calculateDealersCards();
             }
-            if (DCards.length == 4) {
+            if (DCards.length === 4) {
                 let dcard = DCards[3].Value + DCards[3].Suit;
                 $('#dcard3').css("background", "url(imgs/" + dcard + ".svg)");
                 document.getElementById('dcard3').style.backgroundSize = "150px 200px";
                 calculateDealersCards();
             }
-            if (DCards.length == 5) {
+            if (DCards.length === 5) {
                 let dcard = DCards[4].Value + DCards[4].Suit;
                 $('#dcard4').css("background", "url(imgs/" + dcard + ".svg)");
                 document.getElementById('dcard4').style.backgroundSize = "150px 200px";
@@ -201,12 +206,12 @@
             } else if (PPCards[key].Value === 'K' || PPCards[key].Value === 'Q' || PPCards[key].Value === 'J') {
                 cardvalue += 10;
             } else if (PPCards[key].Value === 'A') {
-                cardvalue += 1;
+                cardvalue += 11;
             }
         }
 
         PDA = total + cardvalue;
-
+        console.log(PDA);
         if (PDA > 21) {
             $('.playerchoice').click(false);
             $('#message').html('The House Wins');
@@ -224,31 +229,32 @@
             } else if (DCards[key].Value === 'K' || DCards[key].Value === 'Q' || DCards[key].Value === 'J') {
                 cardvalue += 10;
             } else if (DCards[key].Value === 'A') {
-                cardvalue += 1;
+                cardvalue += 11;
             }
         }
         DDA = total + cardvalue;
+
+
         if (PDA > 21) {
             console.log(PDA);
             $('.playerchoice').click(false);
             pwin = false;
             $('#message').html('You Lose');
-        }
-        if (DDA > PDA && DDA >= 21) {
-            console.log(DDA + ">" + PDA);
-            $('#message').html('You Win');
-            pwin = true;
-            console.log(pwins);
-        }
-        if (DDA === PDA) {
-            console.log(PDA + DDA);
-            $('#message').html('The House wins');
+        } else if (DDA > PDA) {
+            if (DDA < 21) {
+                console.log(PDA + " " + DDA);
+                $('#message').html('You lose');
+                pwin = false;
+            }
+        } else if (DDA === PDA) {
+            console.log(PDA + " " + DDA);
+            $('#message').html('You lose');
             pwin = false;
-        }
-        if (PDA > DDA && PDA <= 21) {
-            console.log(PDA + ">" + DDA);
-            $('#message').html('You Win');
-            pwin = true;
-            console.log(pwins);
+        } else if (PDA > DDA) {
+            if (PDA <= 21) {
+                console.log(PDA + " " + DDA);
+                $('#message').html('You Win');
+                pwin = true;
+            }
         }
     }

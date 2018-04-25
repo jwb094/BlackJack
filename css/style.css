@@ -22,7 +22,7 @@
     /* dealers cards     */
     
     #dcard0 {
-        left: 150px;
+        left: 170px;
         top: 10px;
         /* border: 1px solid black; */
         height: 200px;
@@ -33,7 +33,7 @@
     }
     
     #dcard1 {
-        left: 305px;
+        left: 322px;
         top: 10px;
         /* border: 1px solid black; */
         height: 200px;
@@ -44,7 +44,7 @@
     }
     
     #dcard2 {
-        left: 460px;
+        left: 474px;
         top: 10px;
         /* border: 1px solid black; */
         height: 200px;
@@ -88,14 +88,15 @@
     input[type="text"] {
         width: 80px;
         border-radius: 2px;
+        margin: 25px;
     }
     /* players options     */
     
     .bet {
         width: 100px;
-        height: 100px;
+        /* height: 100px; */
         border: 1px solid black;
-        margin: 15px;
+        margin: 5px;
     }
     
     .playersmoney {
@@ -113,18 +114,16 @@
     .playerchoices {
         left: 895px;
         top: 414px;
-        border: 1px solid black;
         height: 160px;
         width: 190px;
         position: absolute;
         border-radius: 15px;
         color: black;
-        background-color: black;
     }
     /* players cards     */
     
     #pcard0 {
-        left: 150px;
+        left: 170px;
         top: 384px;
         /* border: 1px solid black; */
         height: 200px;
@@ -136,7 +135,7 @@
     }
     
     #pcard1 {
-        left: 300px;
+        left: 319px;
         top: 384px;
         /* border: 1px solid black; */
         height: 200px;
@@ -148,7 +147,7 @@
     }
     
     #pcard2 {
-        left: 449px;
+        left: 469px;
         top: 384px;
         height: 200px;
         width: 145px;
@@ -175,21 +174,20 @@
     }
     
     .playerchoices .hit,
-    .playerchoices .stick,
-    .playerchoices .new-game {
-        border: 1px solid gold;
+    .playerchoices .stick {
+        border: 2px solid gold;
         border-radius: 15px;
         width: 75px;
         height: 70px;
         display: inline-block;
         color: white;
         text-align: center;
-        background-color: green;
     }
     
     .playerchoices .new-game {
         width: 180px;
-        height: 25px;
+        height: 35px;
+        border: 2px solid gold;
     }
     
     .dcard1 #dc1,
