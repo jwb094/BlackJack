@@ -24,40 +24,33 @@
     #dcard0 {
         left: 170px;
         top: 10px;
-        /* border: 1px solid black; */
         height: 200px;
         width: 150px;
         position: absolute;
         border-radius: 15px;
-        /* background-color: brown; */
     }
     
     #dcard1 {
         left: 322px;
         top: 10px;
-        /* border: 1px solid black; */
         height: 200px;
         width: 150px;
         position: absolute;
         border-radius: 15px;
-        /* background-color: brown; */
     }
     
     #dcard2 {
         left: 474px;
         top: 10px;
-        /* border: 1px solid black; */
         height: 200px;
         width: 150px;
         position: absolute;
         border-radius: 15px;
-        /* background-color: brown; */
     }
     
     #dcard3 {
         left: 600px;
         top: 10px;
-        /* border: 1px solid black; */
         height: 200px;
         width: 150px;
         position: absolute;
@@ -76,13 +69,16 @@
     .deck {
         left: 955px;
         top: 200px;
-        border: 1px solid white;
+        /* border: 1px solid white; */
         height: 200px;
         width: 130px;
         position: absolute;
         border-radius: 15px;
         color: black;
-        background-color: aquamarine;
+        /* background-color: aquamarine; */
+        background-image: url('/imgs/black-ghost-back.png');
+        background-size: 200px;
+        background-position-x: -34px;
     }
     
     input[type="text"] {
@@ -94,7 +90,6 @@
     
     .bet {
         width: 100px;
-        /* height: 100px; */
         border: 1px solid black;
         margin: 5px;
     }
@@ -112,7 +107,7 @@
     }
     
     .playerchoices {
-        left: 895px;
+        left: 915px;
         top: 414px;
         height: 160px;
         width: 190px;
@@ -125,29 +120,25 @@
     #pcard0 {
         left: 170px;
         top: 384px;
-        /* border: 1px solid black; */
         height: 200px;
         width: 145px;
         position: absolute;
         border-radius: 15px;
         color: black;
-        /* background-color: brown; */
     }
     
     #pcard1 {
         left: 319px;
         top: 384px;
-        /* border: 1px solid black; */
         height: 200px;
         width: 145px;
         position: absolute;
         border-radius: 15px;
         color: black;
-        /* background-color: brown; */
     }
     
     #pcard2 {
-        left: 469px;
+        left: 465px;
         top: 384px;
         height: 200px;
         width: 145px;
@@ -156,7 +147,7 @@
     }
     
     #pcard3 {
-        left: 600px;
+        left: 615px;
         top: 384px;
         height: 200px;
         width: 145px;
@@ -165,7 +156,7 @@
     }
     
     #pcard4 {
-        left: 750px;
+        left: 765px;
         top: 384px;
         height: 200px;
         width: 145px;
@@ -188,17 +179,4 @@
         width: 180px;
         height: 35px;
         border: 2px solid gold;
-    }
-    
-    .dcard1 #dc1,
-    .dcard2 #dc2,
-    .dcard3 #dc3,
-    .dcard4 #dc4,
-    .dcard5 #dc5,
-    .pcard1 #pc0,
-    .pcard2 #pc1,
-    .pcard3 #pc2,
-    .pcard4 #pc3,
-    .pcard5 #pc4 {
-        font-size: 40px;
     }
