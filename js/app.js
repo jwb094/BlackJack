@@ -294,30 +294,30 @@
             pwin = false;
             $('#message').html('You Lose');
         } else {
-            if (PDA > 21) {
+            if (PDA > 21) { // Player lose
                 console.log(PDA);
                 $('.playerchoices').click(false);
                 pwin = false;
                 $('#message').html('You Lose');
-            } else if (DDA > PDA && DDA <= 21) {
-                //if (DDA < 21) {
+            } else if (DDA > PDA && DDA <= 21) { // Player lose
+                $('.playerchoices').click(false);
                 console.log(PDA + " " + DDA);
                 $('#message').html('You lose');
                 pwin = false;
-                //}
-            } else if (DDA === PDA) {
+            } else if (DDA === PDA) { // Player lose
+                $('.playerchoices').click(false);
                 console.log(PDA + " " + DDA);
                 $('#message').html('You lose');
                 pwin = false;
-            } else if (PDA > DDA && PDA <= 21) {
-                // if (PDA <= 21) {
+            } else if (PDA > DDA && PDA <= 21) { // Player wins
+                $('.playerchoices').click(false);
                 console.log(PDA + " " + DDA);
                 $('#message').html('You Win');
                 pwin = true;
-                // }
-            } else if (DDA > PDA && DDA > 21 && PDA <= 21) {
+            } else if (DDA > PDA && DDA > 21 && PDA <= 21) { // Player wins
+                $('.playerchoices').click(false);
                 $('#message').html('You Win');
-                pwin = false;
+                pwin = true;
             }
         }
     }
