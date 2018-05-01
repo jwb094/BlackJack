@@ -29,7 +29,7 @@ h1 {
 #dcard0 {
     left: 170px;
     top: 10px;
-    height: 195px;
+    height: 200px;
     width: 145px;
     position: absolute;
     border-radius: 15px;
@@ -38,7 +38,7 @@ h1 {
 #dcard1 {
     left: 322px;
     top: 10px;
-    height: 195px;
+    height: 200px;
     width: 145px;
     position: absolute;
     border-radius: 15px;
@@ -47,7 +47,7 @@ h1 {
 #dcard2 {
     left: 470px;
     top: 10px;
-    height: 195px;
+    height: 200px;
     width: 145px;
     position: absolute;
     border-radius: 15px;
@@ -56,7 +56,7 @@ h1 {
 #dcard3 {
     left: 620px;
     top: 10px;
-    height: 195px;
+    height: 200px;
     width: 145px;
     position: absolute;
     border-radius: 15px;
@@ -114,7 +114,7 @@ input[type="text"] {
 #pcard0 {
     left: 170px;
     top: 349px;
-    height: 195px;
+    height: 200px;
     width: 145px;
     position: absolute;
     border-radius: 15px;
@@ -125,7 +125,7 @@ input[type="text"] {
 #pcard1 {
     left: 319px;
     top: 349px;
-    height: 195px;
+    height: 200px;
     width: 145px;
     position: absolute;
     border-radius: 15px;
@@ -136,7 +136,7 @@ input[type="text"] {
 #pcard2 {
     left: 469px;
     top: 349px;
-    height: 195px;
+    height: 200px;
     width: 145px;
     border-radius: 15px;
     position: absolute;

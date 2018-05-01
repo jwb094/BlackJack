@@ -74,14 +74,14 @@
             let card = PCards[i].Value + PCards[i].Suit;
             $('#pcard' + a).css("background", "url(imgs/" + card + ".svg)");
             $('#pcard' + a).fadeIn(3000);
-            document.getElementById('pcard' + a).style.backgroundSize = "150px 200px";
+            document.getElementById('pcard' + a).style.backgroundSize = "145px 200px";
         }
         let dcard = DCards[0].Value + DCards[0].Suit;
         $('#dcard0').css("background", "url(imgs/" + dcard + ".svg)");
         $('#dcard0').fadeIn(3000);
-        document.getElementById('dcard0').style.backgroundSize = "150px 200px";
+        document.getElementById('dcard0').style.backgroundSize = "145px 200px";
         $('#dcard1').css("background", "url(imgs/cardback.jpg)");
-        document.getElementById('dcard1').style.backgroundSize = "150px 200px";
+        document.getElementById('dcard1').style.backgroundSize = "145px 200px";
 
     }
     //if the players clicks hit or stick
@@ -92,19 +92,19 @@
             if (NPCards.length === 1) {
                 let card = NPCards[0].Value + NPCards[0].Suit;
                 $('#pcard2').css("background", "url(imgs/" + card + ".svg)");
-                document.getElementById('pcard2').style.backgroundSize = "150px 200px";;
+                document.getElementById('pcard2').style.backgroundSize = "145px 200px";;
                 calculateCards();
             }
             if (NPCards.length === 2) {
                 let card = NPCards[1].Value + NPCards[1].Suit;
                 $('#pcard3').css("background", "url(imgs/" + card + ".svg)");
-                document.getElementById('pcard3').style.backgroundSize = "150px 200px";;
+                document.getElementById('pcard3').style.backgroundSize = "145px 200px";;
                 calculateCards();
             }
             if (NPCards.length === 3) {
                 let card = NPCards[2].Value + NPCards[2].Suit;
                 $('#pcard4').css("background", "url(imgs/" + card + ".svg)");
-                document.getElementById('pcard4').style.backgroundSize = "150px 200px";
+                document.getElementById('pcard4').style.backgroundSize = "145px 200px";
                 calculateCards();
             }
         } else if (playerOption === "stick") {
@@ -136,15 +136,18 @@
             DCards = [];
             playdeck = [];
             NPCards = [];
+            deck = [];
             balance = balance;
 
             if (pwin === true) {
                 let winnings = betmade * 2;
                 balance = balance + winnings;
                 document.getElementById("balance").innerHTML = "balance :£" + balance;
+                document.getElementById('amount').value = "";
             } else {
                 balance = balance - betmade;
                 document.getElementById("balance").innerHTML = "balance :£" + balance;
+                document.getElementById('amount').value = "";
             }
 
         }
@@ -153,28 +156,29 @@
     function dealerdraw() {
         let dcard = DCards[1].Value + DCards[1].Suit;
         $('#dcard1').css("background", "url(imgs/" + dcard + ".svg)");
-        document.getElementById('dcard1').style.backgroundSize = "150px 200px";
+        document.getElementById('dcard1').style.backgroundSize = "145px 200px";
         calculateDealersCards();
         console.log(DDA);
         if (DDA <= 17) {
+            calculateDealersCards();
             var newcard = Math.floor(Math.random() * deck.length);
             DCards.push(deck[newcard]);
             if (DCards.length === 3) {
                 let dcard = DCards[2].Value + DCards[2].Suit;
                 $('#dcard2').css("background", "url(imgs/" + dcard + ".svg)");
-                document.getElementById('dcard2').style.backgroundSize = "150px 200px";
+                document.getElementById('dcard2').style.backgroundSize = "145px 200px";
                 calculateDealersCards();
             }
             if (DCards.length === 4) {
                 let dcard = DCards[3].Value + DCards[3].Suit;
                 $('#dcard3').css("background", "url(imgs/" + dcard + ".svg)");
-                document.getElementById('dcard3').style.backgroundSize = "150px 200px";
+                document.getElementById('dcard3').style.backgroundSize = "145px 200px";
                 calculateDealersCards();
             }
             if (DCards.length === 5) {
                 let dcard = DCards[4].Value + DCards[4].Suit;
                 $('#dcard4').css("background", "url(imgs/" + dcard + ".svg)");
-                document.getElementById('dcard4').style.backgroundSize = "150px 200px";
+                document.getElementById('dcard4').style.backgroundSize = "145px 200px";
                 calculateDealersCards();
             }
         } else {
@@ -223,6 +227,7 @@
     function calculateDealersCards() {
         let total = 0;
         let cardvalue = 0;
+        console.log(DCards);
         for (const key in DCards) {
             if (typeof DCards[key].Value != "string") {
                 total += DCards[key].Value;
@@ -233,14 +238,14 @@
             }
         }
         DDA = total + cardvalue;
-
+        console.log(DDA);
 
         if (PDA > 21) {
             console.log(PDA);
             $('.playerchoices').click(false);
             pwin = false;
             $('#message').html('You Lose');
-        } else if (DDA > PDA) {
+        } else if (PDA < DDA) {
             if (DDA < 21) {
                 console.log(PDA + " " + DDA);
                 $('#message').html('You lose');
