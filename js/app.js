@@ -73,12 +73,12 @@
             let a = i;
             let card = PCards[i].Value + PCards[i].Suit;
             $('#pcard' + a).css("background", "url(imgs/" + card + ".svg)");
-            $('#pcard' + a).fadeIn(3000);
+            $('#pcard' + a).animate({ opacity: 1 }, { duration: 6000 });
             document.getElementById('pcard' + a).style.backgroundSize = "150px 200px";
         }
         let dcard = DCards[0].Value + DCards[0].Suit;
         $('#dcard0').css("background", "url(imgs/" + dcard + ".svg)");
-        $('#dcard0').fadeIn(3000);
+        $('#dcard0').animate({ opacity: 1 }, { duration: 6000 });
         document.getElementById('dcard0').style.backgroundSize = "150px 200px";
         $('#dcard1').css("background", "url(imgs/cardback.jpg)");
         document.getElementById('dcard1').style.backgroundSize = "150px 200px";
@@ -91,19 +91,19 @@
             NPCards.push(deck[newcard]);
             if (NPCards.length === 1) {
                 let card = NPCards[0].Value + NPCards[0].Suit;
-                $('#pcard2').css("background", "url(imgs/" + card + ".svg)");
+                $('#pcard2').css("background", "url(imgs/" + card + ".svg)").fadeIn(3000, 1);
                 document.getElementById('pcard2').style.backgroundSize = "150px 200px";;
                 calculateCards();
             }
             if (NPCards.length === 2) {
                 let card = NPCards[1].Value + NPCards[1].Suit;
-                $('#pcard3').css("background", "url(imgs/" + card + ".svg)");
+                $('#pcard3').css("background", "url(imgs/" + card + ".svg)").fadeIn(3000, 1);
                 document.getElementById('pcard3').style.backgroundSize = "150px 200px";;
                 calculateCards();
             }
             if (NPCards.length === 3) {
                 let card = NPCards[2].Value + NPCards[2].Suit;
-                $('#pcard4').css("background", "url(imgs/" + card + ".svg)");
+                $('#pcard4').css("background", "url(imgs/" + card + ".svg)").fadeIn(3000, 1);
                 document.getElementById('pcard4').style.backgroundSize = "150px 200px";
                 calculateCards();
             }
@@ -121,13 +121,14 @@
             $('#pcard3').empty();
             $('#pcard4').css('background', '');
             $('#pcard4').empty();
+
             $('#dcard0').css('background', '');
             $('#dcard0').empty();
             $('#dcard1').css('background', '');
             $('#dcard1').empty();
             $('#dcard2').css('background', '');
-            $('#dcard2').css("border", " ")
-            $('#dcard3').css("border", " ");
+            $('#dcard2').empty();
+            $('#dcard3').css("background", " ");
             $('#dcard3').empty();
             $('#dcard4').css('background', '');
             $('#dcard4').empty();
@@ -161,19 +162,19 @@
             DCards.push(deck[newcard]);
             if (DCards.length === 3) {
                 let dcard = DCards[2].Value + DCards[2].Suit;
-                $('#dcard2').css("background", "url(imgs/" + dcard + ".svg)");
+                $('#dcard2').css("background", "url(imgs/" + dcard + ".svg)").fadeIn(3000, 1);
                 document.getElementById('dcard2').style.backgroundSize = "150px 200px";
                 calculateDealersCards();
             }
             if (DCards.length === 4) {
                 let dcard = DCards[3].Value + DCards[3].Suit;
-                $('#dcard3').css("background", "url(imgs/" + dcard + ".svg)");
+                $('#dcard3').css("background", "url(imgs/" + dcard + ".svg)").fadeIn(3000, 1);
                 document.getElementById('dcard3').style.backgroundSize = "150px 200px";
                 calculateDealersCards();
             }
             if (DCards.length === 5) {
                 let dcard = DCards[4].Value + DCards[4].Suit;
-                $('#dcard4').css("background", "url(imgs/" + dcard + ".svg)");
+                $('#dcard4').css("background", "url(imgs/" + dcard + ".svg)").fadeIn(3000, 1);
                 document.getElementById('dcard4').style.backgroundSize = "150px 200px";
                 calculateDealersCards();
             }
@@ -206,7 +207,7 @@
             } else if (PPCards[key].Value === 'K' || PPCards[key].Value === 'Q' || PPCards[key].Value === 'J') {
                 cardvalue += 10;
             } else if (PPCards[key].Value === 'A') {
-                cardvalue += 11;
+                cardvalue += 1;
             }
         }
 
@@ -229,7 +230,7 @@
             } else if (DCards[key].Value === 'K' || DCards[key].Value === 'Q' || DCards[key].Value === 'J') {
                 cardvalue += 10;
             } else if (DCards[key].Value === 'A') {
-                cardvalue += 11;
+                cardvalue += 1;
             }
         }
         DDA = total + cardvalue;

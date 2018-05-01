@@ -8,7 +8,7 @@
     margin: 0 0 0 -400px;
     display: table;
     text-align: center;
-    border: 1px solid black;
+    border: 5px solid black;
     border-top: none;
     position: absolute;
     background: rgb(30, 139, 30);
@@ -45,7 +45,7 @@ h1 {
 }
 
 #dcard2 {
-    left: 474px;
+    left: 470px;
     top: 10px;
     height: 195px;
     width: 145px;
@@ -54,7 +54,7 @@ h1 {
 }
 
 #dcard3 {
-    left: 600px;
+    left: 620px;
     top: 10px;
     height: 195px;
     width: 145px;
@@ -87,20 +87,20 @@ input[type="text"] {
 }
 
 .playersmoney {
-    left: -140px;
-    top: 400px;
+    left: -120px;
+    top: 420px;
     border: 1px solid black;
     height: 200px;
     width: 130px;
     position: absolute;
     border-radius: 15px;
-    color: black;
-    background-color: purple;
+    color: white;
+    background-color: black;
 }
 
 .playerchoices {
     left: 995px;
-    top: 440px;
+    top: 460px;
     height: 160px;
     width: 190px;
     position: absolute;
@@ -165,7 +165,6 @@ input[type="text"] {
 
 .playerchoices .hit,
 .playerchoices .stick {
-    border: 2px solid gold;
     border-radius: 15px;
     width: 75px;
     height: 70px;
@@ -177,5 +176,4 @@ input[type="text"] {
 .playerchoices .new-game {
     width: 180px;
     height: 35px;
-    border: 2px solid gold;
 }
